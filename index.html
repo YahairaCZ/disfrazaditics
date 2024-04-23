@@ -17,6 +17,9 @@
     <link rel="icon" href="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/logo.jpg?raw=true" type="image/icon type">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -66,28 +69,6 @@
         </div>
     </nav>
     <!-- TERMINA NAVBAR :) -->
-
-    <!-- Aviso-->
-
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-body">
-            <h3 class="titulo">Aviso de privacidad</h3>
-          <div class="mt-2 pt-2 border-top">
-            <button type="button" class="btn btn-primary btn-sm">Aceptar</button>
-            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cerrar</button>
-            <a class="enlace" href="aviso.html" title="avisos">Aviso de Privacidad</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="aviso" id="aviso">
-		<img class="galleta" src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/galleta.jpg?raw=true" alt="Galleta" title="galleta de cookies">
-		<h3 class="titulo">Aviso de privacidad</h3>
-		<button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
-		<a class="enlace" href="aviso.html" title="avisos">Aviso de Privacidad</a>
-	</div>
-	<div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
-    <!-- Fin aviso-->
 
     <!-- Carrousel-->
 
@@ -338,7 +319,18 @@
 </footer>
 <!-- Footer -->
 
+    <!-- Aviso-->
+    <div class="aviso-cookies" id="aviso-cookies">
+		<img class="galleta" src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/galleta.jpg?raw=true" alt="Galleta">
+		<h3 class="titulo">Cookies</h3>
+		<p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+		<button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+		<a class="enlace" href="aviso.html">Aviso de Cookies</a>
+	</div>
+	<div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+    <!-- Fin aviso-->
 
+    <script src="aviso-cookies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
