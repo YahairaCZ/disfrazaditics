@@ -3,7 +3,7 @@
 a{
 	color: white;
 }
-.aviso-cookies {
+.aviso {
 	display: none;
 	background: #fff;
 	padding: 20px;
@@ -20,23 +20,23 @@ a{
 	text-align: center;
 }
 
-.aviso-cookies.activo {
+.aviso.activo {
 	display: block;
 }
 
-.aviso-cookies .galleta {
+.aviso .galleta {
 	max-width: 100px;
 	position: absolute;
 	top: -50px;
 	left: calc(50% - 50px);
 }
 
-.aviso-cookies .titulo,
-.aviso-cookies .parrafo {
+.aviso .titulo,
+.aviso .parrafo {
 	margin-bottom: 15px;
 }
 
-.aviso-cookies .boton {
+.aviso .boton {
 	width: 100%;
 	background: #595959;
 	border: none;
@@ -52,17 +52,17 @@ a{
 	font-size: 14px;
 }
 
-.aviso-cookies .boton:hover {
+.aviso .boton:hover {
 	background: #000;
 }
 
-.aviso-cookies .enlace {
+.aviso .enlace {
 	color: #4DBFFF;
 	text-decoration: none;
 	font-size: 14px;
 }
 
-.aviso-cookies .enlace:hover {
+.aviso .enlace:hover {
 	text-decoration: underline;
 }
 
