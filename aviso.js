@@ -1,5 +1,5 @@
 const botonAceptarCookies = document.getElementById('btn-aceptar-cookies');
-const avisoCookies = document.getElementById('aviso-cookies');
+const aviso = document.getElementById('aviso');
 const fondoAvisoCookies = document.getElementById('fondo-aviso-cookies');
 
 dataLayer = [];
