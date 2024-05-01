@@ -40,14 +40,31 @@
                         <a class="nav-link"
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/catalogo.html">Catalogo</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Carrito</a>
-                    </li>
                     <li class="nav-item d-flex">
                         <a class="nav-link"
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/iniciarSesion.html">Iniciar
                             Sesión</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link"
+                            href="https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html">Perfil de usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <!-- Identify your business so that you can collect the payments. -->
+                            <input type="hidden" name="business" value="kin@kinskards.com">
+                        
+                            <!-- Specify a PayPal shopping cart View Cart button. -->
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="display" value="1">
+                        
+                            <!-- Display the View Cart button. -->
+                            <input type="image" name="submit"
+                                src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif"
+                               alt="Add to Cart">
+                            <img alt="" width="1" height="1"
+                                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+                        </form>
                     </li>
                 </ul>
                 <div class="d-flex">

@@ -38,14 +38,31 @@
                         <a class="nav-link"
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/catalogo.html">Catalogo</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Carrito</a>
-                    </li>
                     <li class="nav-item d-flex">
                         <a class="nav-link"
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/iniciarSesion.html">Iniciar
                             Sesión</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link"
+                            href="https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html">Perfil de usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <!-- Identify your business so that you can collect the payments. -->
+                            <input type="hidden" name="business" value="kin@kinskards.com">
+                        
+                            <!-- Specify a PayPal shopping cart View Cart button. -->
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="display" value="1">
+                        
+                            <!-- Display the View Cart button. -->
+                            <input type="image" name="submit"
+                                src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif"
+                               alt="Add to Cart">
+                            <img alt="" width="1" height="1"
+                                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+                        </form>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -114,9 +131,34 @@
                         <li>2 AÑOS</li>
                         <li>4 AÑOS</li>
                         <li>6 AÑOS</li>
-                    </ul>
-                    <button type="button" class="btn btn-warning mt-4 text-white" ><i class="icon-cart-add mr-2"></i><a href ="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Agregar al Carrito</a> </button>        
+                    </ul>       
                 </div>
+                <div class="col-lg-12">
+                    <form target="_self" action="https://www.paypal.com/cgi-bin/webscr"method="post">
+                        <!-- Identify your business so that you can collect the payments. -->
+                        <input type="hidden" name="business" value="kin@kinskards.com">
+                    
+                        <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                    
+                        <!-- Specify details about the item that buyers will purchase. -->
+                        <input type="hidden" name="item_name" value="Dizfraz de Chucky">
+                        <input type="hidden" name="amount" value="274.55">
+                        <input type="hidden" name="currency_code" value="MXM">
+                    
+                        <!-- Display the payment button. -->
+                        <input type="image" name="submit"
+                            src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+                            alt="Add to Cart">
+                        <img alt="" width="1" height="1"
+                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+                    </form>
+                    <br>
+                    <div id="paypal-button-container" style="text-align: center"></div> 
+                  </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=AcijD9iLwutz05H0o-Xujv6DSt5eCFIHQVsvQgJ7liPeDG1MfONroxPUCSuqT2QDLRMLwdk6H8NBPULo&currency=MXN"></script>
+            
                 <div class="row mt-5">
                     <div class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
@@ -130,6 +172,30 @@
         </div>
     </div>
     
+<!--Paypal js botones-->
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
+
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions){
+            return actions.order.create({
+                purchase_units:[{
+                    amount:{
+                        value: 274.55
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                console.log()
+                alert('Gracias por comprar Disfraz de Chucky ' + details.payer.name.given_name +' !');
+                window.localtion.href="index.html";
+            }); 
+        }
+    }).render('#paypal-button-container');
+</script>
+    <!--Fin Paypal js botones-->
 
       <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
