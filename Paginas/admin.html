@@ -24,12 +24,16 @@
         .row {
           display: flex;
         }
-        
-        /* Create two equal columns that sits next to each other */
-        .column {
-          flex: 50%;
+       
+        .lcolumn {
+          flex: 30%;
           padding: 10px;
-          height: 300px; /* Should be removed. Only for demonstration */
+          height: 375px; 
+        }
+        .rcolumn {
+          flex: 70%;
+          padding: 10px;
+          height: 375px; 
         }
         </style>
 </head>
@@ -94,49 +98,44 @@
     </nav>
     <!-- TERMINA NAVBAR :) -->
 
-    <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://yahairacz.github.io/disfrazaditics/Paginas/admin.html">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://yahairacz.github.io/disfrazaditics/Paginas/adminCRUD.html">CRUD</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="column" style="background-color:#aaa;">
-                  <img src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/perfil.jpg?raw=true" alt="">
-                </div>
-                <div class="column" style="background-color:#bbb;">
-                    <h5 class="card-title">Información de usuario</h5>
-                    <table class="table table-dark">
-                      <tbody>
-                        <tr>
-                          <th scope="row">Nombre</th>
-                          <td>Juan Perez</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Correo</th>
-                          <td>sb-kjgj929841128@personal.example.com</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Número de télefono</th>
-                          <td>9397539333</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Domicilio</th>
-                          <td>Miguel Hidalgo, Ciudad de México</td>
-                        </tr>
-                      </tbody>
-                    </table>>
-                </div>
-              </div>
-         
-        </div>
-      </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="lcolumn" style="background-color:#ffffff;">
+              <center>
+                <img 
+              src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/perfil.jpg?raw=true" alt="" width="350" height="350" align="center">
+            </center>
+            </div>
+            <div class="rcolumn" style="background-color:#ffffff;">
+                <center>
+                <h5 class="card-title">Información de usuario</h5>
+                <br>
+                <table class="table table-dark">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Nombre</th>
+                      <td>Juan Perez</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Correo</th>
+                      <td>sb-kjgj929841128@personal.example.com</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Número de télefono</th>
+                      <td>9397539333</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Domicilio</th>
+                      <td>Miguel Hidalgo, Ciudad de México</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </center>
+                <a href="https://yahairacz.github.io/disfrazaditics/Paginas/adminCRUD.html">Agregar Productos</a>
+            </div>
+          </div>
+     
+    </div>
 
       <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">

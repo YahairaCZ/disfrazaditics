@@ -18,22 +18,162 @@
        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
        <style>
         * {
-          box-sizing: border-box;
+        box-sizing: border-box;
         }
-        
-        .row {
-          display: flex;
+
+        .lcolumn {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 500px; 
         }
-        
-        /* Create two equal columns that sits next to each other */
-        .column {
-          flex: 50%;
-          padding: 10px;
-          height: 300px; /* Should be removed. Only for demonstration */
+
+        .rcolumn {
+        float: left;
+        width: 70%;
+        padding: 10px;
+        height: 500px; 
         }
-        </style>
-        <link rel="stylesheet" href="crud.css">
-        <script src="crud.js"></script>
+
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        html {
+          margin: auto;
+          background-color: #ffffff;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    
+        form {
+          text-align: center;
+        }
+    
+    
+    
+        /*Tabla Estilos*/
+        .tablita {
+          display: inline-block;
+    
+          padding-left: 100px;
+          padding-top: 100px;
+          padding-right: 100px;
+        }
+    
+        .tabla {
+          border-collapse: collapse;
+          /*Esta propiedad hace que parezca mas una tabla*/
+          font-family: 'Quicksand', sans-serif;
+        }
+    
+        table tr th {
+          border: 1px solid #D5D9D9;
+          width: 200px;
+          height: 50px;
+          color: white;
+          background-color: rgb(133, 71, 122);
+        }
+    
+        /* Para el estilo de las nuevas celdas */
+        td {
+          border: 1px solid #000000;
+          width: 100px;
+          height: 25px;
+        }
+    
+        /*INPUTS-------------------------------------------------------------*/
+        .inputbox {
+          position: relative;
+          width: 196px;
+        }
+    
+        .inputbox input {
+          position: relative;
+          width: 100%;
+          padding: 20px 10px 10px;
+          background: transparent;
+          outline: none;
+          box-shadow: none;
+          border: none;
+          color: #fefeff;
+          font-size: 1em;
+          letter-spacing: 0.05em;
+          transition: 0.5s;
+          z-index: 10;
+        }
+    
+        .inputbox i {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #000000;
+          border-radius: 4px;
+          transition: 0.5s;
+          pointer-events: none;
+          z-index: 9;
+        }
+    
+        .inputbox input:valid~i,
+        .inputbox input:focus~i {
+          height: 44px;
+        }
+    
+        /*-------------------------------------------------------------------*/
+    
+        /*BOTONES ESTILOS -------------------------------------------------*/
+        .submit {
+          padding: 17px 40px;
+          border-radius: 10px;
+          border: 0;
+          background-color: rgb(175, 238, 15);
+          letter-spacing: 1.5px;
+          font-size: 20px;
+          transition: all .3s ease;
+          box-shadow: rgb(175, 238, 15) 0px 10px 0px 0px;
+          color: hsl(0, 0%, 100%);
+        }
+    
+        .submit:hover {
+          box-shadow: rgb(175, 238, 15) 0px 7px 0px 0px;
+        }
+    
+        .submit:active {
+          background-color: rgb(175, 238, 15);
+          /*50, 168, 80*/
+          box-shadow: rgb(175, 238, 15) 0px 0px 0px 0px;
+          transform: translateY(5px);
+          transition: 200ms;
+        }
+    
+        .submit2 {
+          padding: 15px 15px;
+          border-radius: 10px;
+          border: 0;
+          background-color: rgb(175, 238, 15);
+          letter-spacing: 1.5px;
+          font-size: 20px;
+          transition: all .3s ease;
+          box-shadow: rgb(175, 238, 15);
+          color: hsl(0, 0%, 100%);
+        }
+    
+        .submit2:hover {
+          box-shadow: rgb(175, 238, 15) 0px 7px 0px 0px;
+        }
+    
+        .submit2:active {
+          background-color: rgb(175, 238, 15);
+          /*50, 168, 80*/
+          box-shadow: rgb(175, 238, 15) 0px 0px 0px 0px;
+          transform: translateY(5px);
+          transition: 200ms;
+        }
+      </style>
 </head>
 <body>
     <!-- INICIA NAVBAR :) -->
@@ -96,65 +236,238 @@
     </nav>
     <!-- TERMINA NAVBAR :) -->
 
-    <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="https://yahairacz.github.io/disfrazaditics/Paginas/admin.html">Perfil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://yahairacz.github.io/disfrazaditics/Paginas/adminCRUD.html">CRUD</a>
-              </li>
-          </ul>
+    <!--EL CRUD-->
+    <div class="row" ></div>
+        <div class="lcolumn" style="background-color:#ffffff;" >
+        
+            <form onsubmit="event.preventDefault();onSubmit();" autocomplete="off">
+                  <div class="inputbox">
+                    <h3>Nombre del producto</h3> <input type="text" id="nom" placeholder="Escriba aqui" required />
+                    <i></i>
+                  </div>
+                  <div class="inputbox">
+                    <h3>Descripción</h3> <input type="text" id="des" placeholder="Escriba aqui" required />
+                    <i></i>
+                  </div>
+                  <div class="inputbox">
+                    <h3>Precio</h3> <input type="number" id="precio" placeholder="Escriba aqui" required />
+                    <i></i>
+                  </div>
+                  <br>
+                  <input class="submit" type="submit">
+                  <br><br>
+              </form>
+          
         </div>
-        <header>
-            <h1>Agregar producto</h1>
-        </header>
-       
-        <div class="row">
-            <div class="col1">
-        <div class="card">
-        <form class="formulario">
-            <label for="producto">ID:</label>
-            <input type="text" id="id" name="id"><br><br>
-            <label for="producto">Producto:</label>
-            <input type="text" id="producto" name="producto"><br><br>
-            <label for="precio">Precio:</label>
-            <input type="number" name="precio" id="precio" step="any"><br><br>
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" name="descripcion"><br><br>
-            <label for="fecha">Fecha de introducción:</label>
-            <input type="date" id="fecha" name="fecha"><br><br>
-            <label for="imagen">Seleccionar imagen:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*"><br><br>
-            <div class="botones">
-                <button type="button" onclick=agregarProducto() id="agregar">Agregar</button>
-                <input type="button" value="Guardar cambios" onclick="guardarCambios()" id="editar" style="display:none">
-            </div>
-            <div id="imagenPreview"></div>
-        </form>
-        </div>
-    </div>
-        <div class="col2">
-        <h2>Productos Agregados</h2>
-            <table id="tablaProductos">
-                <thead>
+
+        <div class="rcolumn" style="background-color:#ffffff;">
+            <center>
+            <div class="tablita">
+                <table class="tabla" id="tabla">
+                  <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Descripción</th>
-                        <th>Fecha de introducción</th>
-                        <th>Imagen</th>
-                        <th>Opciones</th>
+                      <th style="background-color: #c50fee;">Nombre del producto</th>
+                      <th style="background-color: #c50fee;">Descripción</th>
+                      <th style="background-color: #c50fee;">Precio</th>
+                      <th style="background-color: #c50fee;">Opciones</th>
                     </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+                  </thead>
+                  <tbody id="res">
+                  </tbody>
+                </table>
+              </div>
+            </center>
         </div>
-    </div>
       </div>
+     
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          cargarDatos();
+        });
+        function cargarDatos() {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', 'productos.json', true);
+          xhr.onload = function () {
+            if (this.status === 200) {
+              const productos = JSON.parse(this.responseText);
+              mostrarDatos(productos);
+            }
+          }
+          xhr.send();
+        }
+    
+        function mostrarDatos(datos) {
+          let res = document.querySelector('#res');
+          res.innerHTML = '';
+          for (let item of datos) {
+            res.innerHTML += "<tr><td>" + item.nombre + "</td><td>" + item.descripcion + "</td><td>" + item.precio + "</td><td>" + item.cantidad + "</td><td><button class='submit2' onclick='editar(" + item.id + ")'>Editar</button><br/><br/><button class='submit2' onclick='Borrarr(this)' data-id='" + item.id + "'>Eliminar</button><br/><br/></td></tr>";
+          }
+        }
+    
+        var Fila = null
+        function onSubmit() {
+          if (Fila !== null) {
+            // Se está editando un producto existente
+            actualizar(Fila);
+          } else {
+            // Se está agregando un nuevo producto
+            agregarNuevoProducto();
+          }
+        }
+        function agregarNuevoProducto() {
+          let lastId = obtenerUltimoId();
+          let nextId = lastId + 1;
+          const newData = {
+            "id": nextId,
+            "nombre": document.getElementById("nom").value,
+            "cantidad": document.getElementById("can").value,
+            "descripcion": document.getElementById("des").value,
+            "precio": document.getElementById("precio").value
+          };
+          fetch('insertar.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert('Datos guardados correctamente.');
+                Vaciar();
+                InsertarDatos(newData);
+              } else {
+                alert('Error al guardar los datos: ' + data.message);
+              }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function obtenerUltimoId() {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', 'productos.json', false);
+          xhr.send();
+          if (xhr.status === 200) {
+            const productos = JSON.parse(xhr.responseText);
+            let ultimoId = 0;
+            productos.forEach(producto => {
+              if (producto.id > ultimoId) {
+                ultimoId = producto.id;
+              }
+            });
+            return ultimoId;
+          } else {
+            console.error('Error al cargar los datos del archivo productos.json');
+            return 0;
+          }
+        }
+        function Leer() {
+          let DataForm = {}
+          DataForm["nom"] = document.getElementById("nom").value
+          DataForm["des"] = document.getElementById("des").value
+          DataForm["can"] = document.getElementById("can").value
+          return DataForm
+        }
+        function InsertarDatos(data) {
+          let table = document.getElementById("tabla").getElementsByTagName('tbody')[0];
+          let newRow = table.insertRow();
+          newRow.innerHTML = "<td>" + data.nombre + "</td><td>" + data.descripcion + "</td><td>" + data.precio + "</td><td>"  + "</td><td><button class='submit2' onclick='editar(" + data.id + ")'>Editar</button><br/><br/><button class='submit2' onclick='Borrarr(this)' data-id='" + data.id + "'>Eliminar</button></td>";
+          Vaciar();
+        }
+    
+        function Vaciar() {
+          document.getElementById("nom").value = ""
+          document.getElementById("des").value = ""
+          document.getElementById("precio").value = ""
+          Fila = null
+        }
+    
+        function editar(id) {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', 'productos.json', true);
+          xhr.onload = function () {
+            if (this.status === 200) {
+              const productos = JSON.parse(this.responseText);
+              const producto = productos.find(item => item.id === id);
+              if (producto) {
+                // Llenar el formulario con los datos del producto seleccionado
+                document.getElementById("nom").value = producto.nombre;
+                document.getElementById("des").value = producto.descripcion;
+                document.getElementById("precio").value = producto.precio;
+                // Guardar el ID del producto actualmente editado
+                Fila = producto.id;
+              } else {
+                alert('Producto no encontrado');
+              }
+            }
+          }
+          xhr.send();
+        }
+    
+    function actualizar(id) {
+      const newData = {
+        "id": id,
+        "nombre": document.getElementById("nom").value,
+        "descripcion": document.getElementById("des").value,
+        "precio": document.getElementById("precio").value
+      };
+    
+      fetch('actualizar.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Datos actualizados correctamente.');
+            // Actualizar la fila en la tabla
+            cargarDatos(); // Vuelve a cargar los datos para reflejar los cambios
+            Vaciar(); // Limpiar el formulario
+          } else {
+            alert('Error al actualizar los datos: ' + data.message);
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+        function Borrarr(td) {
+          if (confirm('¿Seguro de borrar este registro?')) {
+            // Obtener el ID del producto de alguna manera (por ejemplo, desde un atributo personalizado en la fila)
+            var id = td.getAttribute('data-id');
+            console.log('ID del producto a eliminar:', id);
+    
+            // Realizar solicitud POST a eliminar.php
+            fetch('eliminar.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ id: id }) // Enviar el ID del producto a eliminar
+            })
+              .then(response => response.json())
+              .then(data => {
+                if (data.success) {
+                  // Éxito
+                  alert('Registro eliminado correctamente.');
+                  // Eliminar la fila de la tabla
+                  td.parentElement.parentElement.remove();
+                  // Limpiar el formulario después de eliminar el registro
+                  Vaciar();
+                } else {
+                  // Error
+                  alert('Error al eliminar el registro: ' + data.message);
+                }
+              })
+              .catch(error => console.error('Error:', error));
+          }
+        }
+      </script>
+    <!--FIN EL CRUD-->
+    
 
       <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">

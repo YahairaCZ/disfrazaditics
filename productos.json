@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "nombre": "Vaso tipo Starbuck",
+        "descripcion": "Disfruta de tus bebidas favoritas todo el tiempo con nuestros novedosos vasos fabricados en pl\u00e1stico y dise\u00f1ados para usarse para todo tipo de l\u00edquidos. Si vas a la playa no puede faltar este singular accesorio que te mantendr\u00e1 hidratado durante tus vacaciones, por su dise\u00f1o de rosca no permite derrames esto lo hace ideal tambi\u00e9n para llevar al GYM y mantenerte hidratado durante todo tu entrenamiento con una gran capacidad de 710ml. De igual forma si lo usas para la escuela mantendr\u00e1s un estilo fresco y tus bebidas conservar\u00e1n muy bien la temperatura. Este vaso es tan vers\u00e1til que lo recomendamos para uso dom\u00e9stico o aligerar un d\u00eda laboral; tu vaso siempre estar\u00e1 cuando lo necesites. Cuenta con doble pared y un interior liso que permite mantenerlo limpio todo el tiempo.",
+        "precio": "250.00",
+        "imagen": "img\/img1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Vaso Cristal con tapa",
+        "descripcion": "El vaso de vidrio est\u00e1 hecho de cristal de alta calidad, \u00e9ste no genera hongos ya que es material es de vidrio y bamb\u00fa, no se contiene pl\u00e1stico. El termo de cristal es altamente t\u00e9rmico. El vaso de vidrio individual no contiene plomo ni BPA, y es lo suficientemente fuerte como para soportar cambios repentinos en temperaturas, en otras palabras tiene propiedades t\u00e9rmicas. El termo de vidrio es apto para lavaplatos, pero las tapas de madera de bamb\u00fa debe lavarse a mano y dejarse bien seca. La tapa de madera de bamb\u00fa refleja nuestro firme compromiso con el medio ambiente al utilizar madera es el termoes un producto sostenible y renovable. El termo de cristal con forma de lata es perfecto para cualquier bebida fr\u00eda o caliente y para cualquier ocasi\u00f3n. El vaso t\u00e9rmico con popote puede utilizarse para beber cerveza refrescante, hacer c\u00f3cteles perfectos como whiskey o un caf\u00e9 de Starbucks. Sirve tus bebidas favoritas en este termo individual de cristal para una experiencia inolvidable.",
+        "precio": "350.00",
+        "imagen": "img\/img3.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Termo Inoxidable",
+        "descripcion": "El vaso t\u00e9rmico para llevar mantiene sus bebidas calientes durante al menos 5 horas y fr\u00edas hasta 8 horas, para que pueda disfrutar de sus bebidas y caf\u00e9 favoritos tranquilamente durante varias horas, ideal para viajar y en casa. Gracias a su aislamiento al vac\u00edo, no te quemar\u00e1s los dedos con esta taza de caf\u00e9 para llevar de acero inoxidable de doble pared.",
+        "precio": "450.00",
+        "imagen": "img\/img4.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Vaso de Cristal 15 Oz",
+        "descripcion": "Este vasos cristal tiene una capacidad de 500 ml, lo que es lo suficientemente grande como para contener m\u00e1s bebidas o caf\u00e9. Y el estuario de la botella es un estuario est\u00e1ndar. Por lo tanto, al hacer su propio jugo, puede agregar grandes trozos de pulpa o hielo en la taza para decorar para que tenga suficiente",
+        "precio": "170.00",
+        "imagen": "img\/img8.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Centro de mesa",
+        "descripcion": " Paquete evento sencillo: 10 centros de mesa globo burbuja, guirnalda 2 metros, luces y cortinas",
+        "precio": "500.00",
+        "imagen": "img\/img2.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Arreglo de flores",
+        "descripcion": "Arreglo floral chico, variedad de flores de temporadag",
+        "precio": "250.00",
+        "imagen": "img\/img6.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Burbuja Chica ",
+        "descripcion": "Burbuja chica, con frase y dise\u00f1o personalizado.",
+        "precio": "99.00",
+        "imagen": "img\/img5.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Caja de carton",
+        "descripcion": "Proteger nuestros productos cuando son enviados a cualquier sitio de la Rep\u00fablica es lo m\u00e1s importante, tanto para nosotros como para los clientes, por ello, traemos esta cajita s\u00faper resistente para peque\u00f1os productos que requieren ser trasladados de un punto a otro. O bien, si lo que quieres es darles una excelente presentaci\u00f3n a tus productos esta cajita es perfecta. La cajita de Env\u00edo Chica es sencilla de armar, no requiere pegamento y es sumamente resistente. No dejes pasar la oportunidad de contar con ella para cumplir tus metas.",
+        "precio": "50.00",
+        "imagen": "img\/img7.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": " Chocolate milky ",
+        "descripcion": "Si eres un amante del chocolate, entonces no puedes dejar de a\u00f1adir a tu carrito de la despensa el chocolate Milky Way minis. Chocolate con relleno de caramelo y nougat lo hacen irresistible. Adquiere esta presentaci\u00f3n en bote de 442 g con 52 piezas para ofrecer a tus invitados un delicioso y dulce bocado en tus reuniones especiales",
+        "precio": "58",
+        "imagen": "img\/milky.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Disfraz inflable",
+        "descripcion": "Este disfraz es fant\u00e1stico para aquellos que desean destacar en una fiesta de disfraces o hacer que las actividades al aire libre sean memorables. Nuestro disfraz inflable se ve fant\u00e1stico y se r\u00ede donde quiera que vayas. \u00bfPor qu\u00e9 no darle una oportunidad este Halloween. Requiere bater\u00edas para el ventilador que mantendr\u00e1 el traje inflado.",
+        "precio": "999.00",
+        "imagen": "img\/disfraz1.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Termo cuatro",
+        "descripcion": "Color plata",
+        "precio": "250"
+    }
+]
