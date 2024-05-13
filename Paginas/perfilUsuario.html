@@ -81,14 +81,15 @@
     </nav>
     <!-- TERMINA NAVBAR :) -->
 
-    <h2 style="text-align:center">User Profile Card</h2>
-
+    <div class="container">
+    <h1>Perfil de Usuario</h1>
+        <div id="userInfo">
 <div class="card">
-  <img src="perfil.jpg" alt="placeholder" style="width:100%">
-  <h1 id="nombreUsuario">Nombre Apellido</h1>
-  <p class="title" id="emailUsuario">Correo Electrónico</p>
-  <p id="ciudadUsuario">Ciudad</p>
-  <p id="estadoUsuario">Estado</p>
+        <p>Nombre: <span id="nombreUsuario"></span></p>
+        <p>Apellido: <span id="apellidoUsuario"></span></p>
+        <p>Correo Electrónico: <span id="emailUsuario"></span></p>
+        <p>Ciudad: <span id="ciudadUsuario"></span></p>
+        <p>Estado: <span id="estadoUsuario"></span></p>
   <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  
@@ -217,22 +218,20 @@
 </footer>
 <!-- Footer -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Obtener los datos del usuario almacenados en localStorage
-        var usuarioJSON = localStorage.getItem('usuario');
-
-        if (usuarioJSON) {
-            // Convertir la cadena JSON de usuario a objeto
-            var usuario = JSON.parse(usuarioJSON);
-
-            // Muestra los datos
-            document.getElementById('nombreUsuario').textContent = usuario.nombre + ' ' + usuario.apellido;
-            document.getElementById('emailUsuario').textContent = usuario.email;
-            document.getElementById('ciudadUsuario').textContent = usuario.ciudad;
-            document.getElementById('estadoUsuario').textContent = usuario.estado;
-        }
-    });
-</script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var usuarioGuardado = localStorage.getItem('usuario');
+            if (usuarioGuardado) {
+                var usuario = JSON.parse(usuarioGuardado);
+                var userInfoDiv = document.getElementById('userInfo');
+                userInfoDiv.innerHTML = `
+                    <p>Nombre: ${usuario.nombre} ${usuario.apellido}</p>
+                    <p>Correo Electrónico: ${usuario.email}</p>
+                    <p>Ciudad: ${usuario.ciudad}</p>
+                    <p>Estado: ${usuario.estado}</p>
+                `;
+            }
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
