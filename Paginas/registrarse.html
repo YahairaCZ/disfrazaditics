@@ -261,4 +261,29 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 </body>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar el envío del formulario por defecto
+
+            var nombre = document.getElementById('validationCustom01').value;
+            var apellido = document.getElementById('validationCustom02').value;
+            var email = document.getElementById('typeEmailX').value;
+            var ciudad = document.getElementById('validationCustom03').value;
+            var estado = document.getElementById('validationCustom04').value;
+
+            var usuario = {
+                nombre: nombre,
+                apellido: apellido,
+                email: email,
+                ciudad: ciudad,
+                estado: estado
+            };
+
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+
+            window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html';
+        });
+    });
+</script>
 </html>
