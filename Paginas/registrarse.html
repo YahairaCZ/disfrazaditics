@@ -81,7 +81,7 @@
    
     <div class="card bg-body-tertiary text-black" style="border-radius: 1rem;">
         <div class="card-body p-5 text-center">
-         <form class="row g-3 needs-validation" novalidate>
+         <form class="row g-3 needs-validation" id="registroForm" novalidate>
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">Nombre</label>
           <input type="text" class="form-control" id="validationCustom01" value="Nombres" required>
@@ -132,9 +132,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">
-            <a  class="text-white-50 fw-bold" href="https://yahairacz.github.io/disfrazaditics/Paginas/iniciarSesion.html">Registrarse</a>
-            </button>
+          <button class="btn btn-primary" type="submit">Registrarse</button>
         </div>
       </form>
     </div>
@@ -260,30 +258,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-</body>
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar el envío del formulario por defecto
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('registroForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Evitar el envío del formulario por defecto
 
-            var nombre = document.getElementById('validationCustom01').value;
-            var apellido = document.getElementById('validationCustom02').value;
-            var email = document.getElementById('typeEmailX').value;
-            var ciudad = document.getElementById('validationCustom03').value;
-            var estado = document.getElementById('validationCustom04').value;
+                var nombre = document.getElementById('validationCustom01').value;
+                var apellido = document.getElementById('validationCustom02').value;
+                var email = document.getElementById('typeEmailX').value;
+                var ciudad = document.getElementById('validationCustom03').value;
+                var estado = document.getElementById('validationCustom04').value;
 
-            var usuario = {
-                nombre: nombre,
-                apellido: apellido,
-                email: email,
-                ciudad: ciudad,
-                estado: estado
-            };
+                var usuario = {
+                    nombre: nombre,
+                    apellido: apellido,
+                    email: email,
+                    ciudad: ciudad,
+                    estado: estado
+                };
 
-            localStorage.setItem('usuario', JSON.stringify(usuario));
+                localStorage.setItem('usuario', JSON.stringify(usuario));
 
-            window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html';
+                window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html';
+            });
         });
-    });
-</script>
+    </script>
+</body>
 </html>
