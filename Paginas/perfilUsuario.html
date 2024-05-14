@@ -81,13 +81,16 @@
     </nav>
     <!-- TERMINA NAVBAR :) -->
 
-    <h2 style="text-align:center">User Profile Card</h2>
-
+    <div class="container">
+    <h1>Perfil de Usuario</h1>
+        <div id="userInfo">
 <div class="card">
-  <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-  <h1>John Doe</h1>
-  <p class="title">CEO & Founder, Example</p>
-  <p>Harvard University</p>
+        <img id="imagenPerfilUsuario" src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/perfil.jpg?raw=true" alt="Imagen de perfil" style="max-width: 150px; max-height: 150px;>
+        <p>Nombre: <span id="nombreUsuario"></span></p>
+        <p>Apellido: <span id="apellidoUsuario"></span></p>
+        <p>Correo Electrónico: <span id="emailUsuario"></span></p>
+        <p>Ciudad: <span id="ciudadUsuario"></span></p>
+        <p>Estado: <span id="estadoUsuario"></span></p>
   <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  
@@ -215,7 +218,21 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var usuarioGuardado = localStorage.getItem('usuario');
+            if (usuarioGuardado) {
+                var usuario = JSON.parse(usuarioGuardado);
+                var userInfoDiv = document.getElementById('userInfo');
+                userInfoDiv.innerHTML = `
+                    <p>Nombre: ${usuario.nombre} ${usuario.apellido}</p>
+                    <p>Correo Electrónico: ${usuario.email}</p>
+                    <p>Ciudad: ${usuario.ciudad}</p>
+                    <p>Estado: ${usuario.estado}</p>
+                `;
+            }
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
