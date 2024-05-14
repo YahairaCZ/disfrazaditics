@@ -125,6 +125,7 @@
                         <li>7 AÑOS </li>
                         <li>8 AÑOS </li>
                     </ul>       
+                    <h6>$498.00</h6>
                 </div>
 
                 <!--Agregar al carrito-->
@@ -152,16 +153,36 @@
                     <br>
                     <div id="paypal-button-container" style="text-align: center"></div> 
                   </div>
-                <script src="https://www.paypal.com/sdk/js?client-id=AcijD9iLwutz05H0o-Xujv6DSt5eCFIHQVsvQgJ7liPeDG1MfONroxPUCSuqT2QDLRMLwdk6H8NBPULo&currency=MXN"></script>
-            <!--Fin agregar al carrito-->
+                  <!--Fin agregar al carrito-->
             <!--Paypal js botones-->
-            <script src="https://www.paypal.com/sdk/js?client-id=BAAiTbWBjgCEkjRbMdCtWpzZemhV2mINP7QIgOOzJO81uw9MvVMsrjIAWiF5NZ2HRWMBdJhz9-tbK0mtbo&components=hosted-buttons&disable-funding=venmo&currency=MXN"></script>
-            <div id="paypal-container-UGSR4MFDBZXT6"></div>
-            <script>
-            paypal.HostedButtons({
-                hostedButtonId: "UGSR4MFDBZXT6",
-            }).render("#paypal-container-UGSR4MFDBZXT6")
-            </script>
+            <div id="paypal-button-container"></div>
+    <script>
+        paypal.Buttons({
+            style:{
+                color: 'blue',
+                shape: 'pill', 
+                label : 'pay'
+            },
+            createOrder: function(data, actions){
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: 498
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions){
+                actions.order.capture().then(function(detalles){
+                    console.log(detalles);
+                });
+            },
+            onCancel: function(data){
+                alert("Pago cancelado");
+                console.log(data);
+            }
+        }).render('#paypal-button-container');
+    </script>
                 <!--Fin Paypal js botones-->
             <!--Agregar comentario-->
                   <h3>Comentarios</h3>
