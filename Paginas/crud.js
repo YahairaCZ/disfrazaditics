@@ -95,14 +95,49 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>${nombre}</td>
                 <td>$${precio.toFixed(2)}</td>
                 <td>${descripcion}</td>
+                <td>
+                <button class="editarBtn" data-id="${producto.id}">Editar</button>
+                <button class="eliminarBtn" data-id="${producto.id}">Eliminar</button>
+                </td>
             `;
 
             // Limpiar el formulario después de agregar el producto
             nuevoProductoForm.reset();
         } else {
             alert('Por favor, completa todos los campos.');
+            
         }
     });
+    function agregarEventosEditar() {
+        const editarBtns = document.querySelectorAll('.editarBtn');
+
+        editarBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productoId = btn.dataset.id;
+
+                // Simular edición: mostrar datos del producto en un formulario
+                alert(`Editar producto con ID ${productoId}`);
+            });
+        });
+    }
+
+    function agregarEventosEliminar() {
+        const eliminarBtns = document.querySelectorAll('.eliminarBtn');
+
+        eliminarBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productoId = btn.dataset.id;
+
+                // Simular eliminación: eliminar el producto y actualizar la tabla
+                if (confirm(`¿Estás seguro de eliminar el producto con ID ${productoId}?`)) {
+                    // Eliminar el producto (implementación simulada)
+                    alert(`Producto con ID ${productoId} eliminado.`);
+                    // Actualizar la tabla (volver a cargar productos)
+                    cargarProductos();
+                }
+            });
+        });
+    }
 });
 
 
