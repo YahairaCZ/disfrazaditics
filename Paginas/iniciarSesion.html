@@ -250,49 +250,48 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var form = document.querySelector('form');
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-                var emailLogin = document.getElementById('typeEmailX').value;
-                var passwordLogin = document.getElementById('typePasswordX').value;
-                // Validación del formato de correo electrónico
-                if (!isValidEmail(emailLogin)) {
-                    alert('Por favor, ingrese un correo electrónico válido.');
-                    return;
-                }
-                var usuarioGuardado = localStorage.getItem('usuario_' + emailLogin);
-                if (usuarioGuardado) {
-                    var usuario = JSON.parse(usuarioGuardado);
-                    // Comparación segura de contraseñas
-                    if (comparePasswords(passwordLogin, usuario.password)) {
-                        // Iniciar sesión exitosamente
-                        alert('¡Inicio de sesión exitoso!');
-                        // Redirigir al usuario a la página deseada
-                        // window.location.href = ''; // URL de la página deseada
-                    } else {
-                        alert('La contraseña es incorrecta');
-                    }
-                } else {
-                    alert('El usuario no existe');
-                }
-            });
-        });
-
-        // Función para validar el formato de correo electrónico
-        function isValidEmail(email) {
-            return /\S+@\S+\.\S+/.test(email);
+        var emailLogin = document.getElementById('typeEmailX').value;
+        var passwordLogin = document.getElementById('typePasswordX').value;
+        // Validación del formato de correo electrónico
+        if (!isValidEmail(emailLogin)) {
+            alert('Por favor, ingrese un correo electrónico válido.');
+            return;
         }
-
-        // Función para comparar contraseñas de forma segura
-        function comparePasswords(password, hashedPassword) {
-            // Aquí implementarías tu lógica de comparación segura de contraseñas
-            // Por ejemplo, si estás utilizando bcrypt para hash, usarías su función de comparación
-            // Por simplicidad, aquí solo se compara en texto plano
-            return password === hashedPassword;
+        var usuarioGuardado = localStorage.getItem('usuario_' + emailLogin);
+        if (usuarioGuardado) {
+            var usuario = JSON.parse(usuarioGuardado);
+            // Comparación segura de contraseñas
+            if (comparePasswords(passwordLogin, usuario.password)) {
+                // Iniciar sesión exitosamente
+                alert('¡Inicio de sesión exitoso!');
+                // Redirigir al usuario a la página deseada
+                window.location.href = ''; // URL de la página deseada
+            } else {
+                alert('La contraseña es incorrecta');
+            }
+        } else {
+            alert('El usuario no existe');
         }
-    </script>
+    });
+});
+
+// Función para validar el formato de correo electrónico
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+// Función para comparar contraseñas de forma segura
+function comparePasswords(password, hashedPassword) {
+    // Aquí implementarías tu lógica de comparación segura de contraseñas
+    // Por simplicidad, aquí solo se compara en texto plano
+    return password === hashedPassword;
+}
+</script>
 </body>
 
 </html>
