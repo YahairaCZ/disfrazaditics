@@ -88,44 +88,36 @@
     <div class="container justify-content-center">
         <section class="vh-100 gradient-custom">
             <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                  <div class="card bg-body-tertiary text-black" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
-          
-                      <div class="mb-md-5 mt-md-4 pb-5">
-          
-                        <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesión</h2>
-                        <p class="text-black-50 mb-5">¡Por favor, introduzca su nombre de usuario y contraseña!</p>
-          
-                        <div class="form-outline form-white mb-4">
-                          <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                          <label class="form-label" for="typeEmailX">Email</label>
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-body-tertiary text-black" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+                                <div class="mb-md-5 mt-md-4 pb-5">
+                                    <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesión</h2>
+                                    <p class="text-black-50 mb-5">¡Por favor, introduzca su nombre de usuario y contraseña!</p>
+                                    <form id="loginForm">
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" id="typeEmailX" class="form-control form-control-lg" required>
+                                            <label class="form-label" for="typeEmailX">Email</label>
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="password" id="typePasswordX" class="form-control form-control-lg" required>
+                                            <label class="form-label" for="typePasswordX">Contraseña</label>
+                                        </div>
+                                        <p class="small mb-5 pb-lg-2"><a class="text-black-50" href="https://yahairacz.github.io/disfrazaditics/Paginas/olvideContrasena.html">Olvidaste tu contraseña?</a></p>
+                                        <button class="btn btn-outline-dark btn-lg px-5" type="submit">Iniciar Sesión</button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <p class="mb-0">No tienes una cuenta? <a class="text-black-50 fw-bold" href="https://yahairacz.github.io/disfrazaditics/Paginas/registrarse.html">Registrate</a></p>
+                                </div>
+                            </div>
                         </div>
-          
-                        <div class="form-outline form-white mb-4">
-                          <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                          <label class="form-label" for="typePasswordX">Contraseña</label>
-                        </div>
-          
-                        <p class="small mb-5 pb-lg-2"><a class="text-black-50" href="https://yahairacz.github.io/disfrazaditics/Paginas/olvideContrasena.html">Olvidaste tu contraseña?</a></p>
-          
-                        <button class="btn btn-outline-dark btn-lg px-5" type="submit"> <a href="https://yahairacz.github.io/disfrazaditics/">Iniciar Sesión</a></button>
-          
-                      </div>
-          
-                      <div>
-                        <p class="mb-0">No tienes una cuenta? <a class="text-black-50 fw-bold" href="https://yahairacz.github.io/disfrazaditics/Paginas/registrarse.html" >Registrate</a>
-                        </p>
-                      </div>
-          
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </section>
-      </div>
+        </section>
+    </div>
 
     
 
@@ -250,9 +242,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var form = document.querySelector('form');
-            form.addEventListener('submit', function(event) {
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.getElementById('loginForm');
+            form.addEventListener('submit', function (event) {
                 event.preventDefault();
 
                 var emailLogin = document.getElementById('typeEmailX').value;
@@ -270,7 +262,7 @@
                         // Iniciar sesión exitosamente
                         alert('¡Inicio de sesión exitoso!');
                         // Redirigir al usuario a la página deseada
-                        // window.location.href = ''; // URL de la página deseada
+                        window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html'; // URL de la página deseada
                     } else {
                         alert('La contraseña es incorrecta');
                     }
@@ -288,7 +280,6 @@
         // Función para comparar contraseñas de forma segura
         function comparePasswords(password, hashedPassword) {
             // Aquí implementarías tu lógica de comparación segura de contraseñas
-            // Por ejemplo, si estás utilizando bcrypt para hash, usarías su función de comparación
             // Por simplicidad, aquí solo se compara en texto plano
             return password === hashedPassword;
         }

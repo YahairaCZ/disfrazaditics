@@ -262,32 +262,39 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('registroForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar el envío del formulario por defecto
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('registroForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar el envío del formulario por defecto
 
-            var nombre = document.getElementById('validationCustom01').value;
-            var apellido = document.getElementById('validationCustom02').value;
-            var email = document.getElementById('typeEmailX').value;
-            var ciudad = document.getElementById('validationCustom03').value;
-            var estado = document.getElementById('validationCustom04').value;
-            var contraseña = document.getElementById('validationCustom05').value; // Obtener el valor de la contraseña
+        // Obtener los valores de los campos del formulario
+        var nombre = document.getElementById('validationCustom01').value;
+        var apellido = document.getElementById('validationCustom02').value;
+        var email = document.getElementById('typeEmailX').value;
+        var ciudad = document.getElementById('validationCustom03').value;
+        var estado = document.getElementById('validationCustom04').value;
+        var contraseña = document.getElementById('validationCustom05').value;
 
-            var usuario = {
-                nombre: nombre,
-                apellido: apellido,
-                email: email,
-                ciudad: ciudad,
-                estado: estado,
-                contraseña: contraseña // Agregar la contraseña al objeto usuario
-            };
+        // Validar que los campos requeridos no estén vacíos
+        if (nombre === '' || apellido === '' || email === '' || ciudad === '' || estado === '' || contraseña === '') {
+            alert('Por favor complete todos los campos');
+            return;
+        }
 
-            localStorage.setItem('usuario', JSON.stringify(usuario));
+        // Si todos los campos están completos, guardar el usuario en el almacenamiento local
+        var usuario = {
+            nombre: nombre,
+            apellido: apellido,
+            email: email,
+            ciudad: ciudad,
+            estado: estado,
+            contraseña: contraseña
+        };
+        localStorage.setItem('usuario', JSON.stringify(usuario));
 
-            // Redirigir al usuario a la página de perfil de usuario
-            window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html';
-        });
+        // Redirigir al usuario a la página de perfil de usuario
+        window.location.href = 'https://yahairacz.github.io/disfrazaditics/Paginas/iniciarSesion.html';
     });
+});
 </script>
 </body>
 </html>
