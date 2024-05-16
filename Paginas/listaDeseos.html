@@ -47,6 +47,10 @@
                         <a class="nav-link"
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html">Perfil de usuario</a>
                     </li>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link"
+                            href="https://yahairacz.github.io/disfrazaditics/Paginas/listaDeseos.html">Lista de Deseos</a>
+                    </li>
                     <li class="nav-item">
                         <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                             <!-- Identify your business so that you can collect the payments. -->
@@ -83,6 +87,31 @@
         <div class="card-body p-5 text-center">
             
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="listaDeseosBody"></tbody>
+    </table>
+    
+    <script>
+        // Obtener la lista de deseos del almacenamiento local
+        var listaDeseos = localStorage.getItem('listaDeseos');
+        if (listaDeseos) {
+            listaDeseos = JSON.parse(listaDeseos);
+            var listaDeseosBody = document.getElementById('listaDeseosBody');
+    
+            // Mostrar cada producto en la lista de deseos
+            listaDeseos.forEach(function(producto) {
+                var fila = document.createElement('tr');
+                fila.innerHTML = '<td>' + producto.nombre + '</td><td>' + producto.precio + '</td>';
+                listaDeseosBody.appendChild(fila);
+            });
+        }
+    </script>
     </div>
 
       <!-- Footer -->
