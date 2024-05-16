@@ -1,23 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYKCNWS37L"></script>
-   <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag() { dataLayer.push(arguments); }
-       gtag('js', new Date());
 
-       gtag('config', 'G-RYKCNWS37L');
-   </script>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Disfrazaditics | Registro </title>
-   <link rel="icon" href="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/logo.jpg?raw=true" type="image/icon type">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-      
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYKCNWS37L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RYKCNWS37L');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disfrazaditics</title>
+    <link rel="icon" href="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/logo.jpg?raw=true" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="ePerfil.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .lcolumn {
+            flex: 30%;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .rcolumn {
+            flex: 70%;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .card-title {
+            color: #000;
+        }
+
+        .table-dark {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .table-dark th, .table-dark td {
+            border: 1px solid #fff;
+        }
+    </style>
 </head>
+
 <body>
     <!-- INICIA NAVBAR :) -->
     <nav class="navbar navbar-expand-lg">
@@ -49,17 +88,18 @@
                             href="https://yahairacz.github.io/disfrazaditics/Paginas/perfilUsuario.html">Perfil de usuario</a>
                     </li>
                     <li class="nav-item d-flex">
-                      <a class="nav-link"
-                          href="https://yahairacz.github.io/disfrazaditics/Paginas/listaDeseos.html">Lista de Deseos</a>
-                  </li>
+                        <a class="nav-link"
+                            href="https://yahairacz.github.io/disfrazaditics/Paginas/listaDeseos.html">Lista de Deseos</a>
+                    </li>
                     <li class="nav-item">
-                      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="encrypted"
-                          value="-----BEGIN PKCS7-----MIIG1QYJKoZIhvcNAQcEoIIGxjCCBsICAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCms3neAC4USPFF3D7RcFddqOyDWxsjgZ4YJ+bsV9hiDkXj7GTANaV7NNgyR3UnAi9rike0VvZeCTRQkd+aCks7oT2EYlVyDoaTI5BrZlfoN7V2on/38G6L1dRVWlW+Qv1Pr1gVLX0COXRmLkccccKBNa7dEJNgNfB0+wGp0XXf5DELMAkGBSsOAwIaBQAwUwYJKoZIhvcNAQcBMBQGCCqGSIb3DQMHBAiQIWSR20GfWIAwOGcrfBntug0mQed3hqAQr1uzSy5UHXH1q2RheM5OaBHGSY24bHhebTTZYHR4T08WoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwNDI5MDUxNjUwWjAjBgkqhkiG9w0BCQQxFgQUtVPLyRSMK5osLrZ7ZGmi0plFta8wDQYJKoZIhvcNAQEBBQAEgYAqCKsB8uHleU9o1Ef+VAEN5BzOBLKHrjSE2vNmEv1+273UMssF2F5wpl4TIfVWQCPiJkCN3WqhZ0hV2E6XhppuxjoyKqsvWuE/Hcban6uFt+r+YUbXZ0aMEkuKfAJbxn7iAq4SZdiSmLLs3hhvHxMRwmDhtH4WYCgopopxcI7sUw==-----END PKCS7-----">
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" 
-                          name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-                      </form>
+                        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="encrypted"
+                              value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" 
+                              name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                          </form>
+                    </li>
                 </ul>
                 <div class="d-flex">
                     <div class="ml-auto p-1">
@@ -74,51 +114,9 @@
     </nav>
     <!-- TERMINA NAVBAR :) -->
 
-
-    <!--EL CRUD-->
-    <center>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-    <form id="nuevoProductoForm">
-      <div>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
-      </div>
-      <br>
-      <div>
-          <label for="precio">Precio:</label>
-          <input type="number" id="precio" name="precio" step="0.01" min="0" required>
-      </div>
-      <div>
-          <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" required></textarea>
-      </div>
-      <button type="submit">Agregar Producto</button>
-  </form>
-</div>
-</div> 
-</center> 
-  <br>
-    <div class="productos-container">
-      <center><h2>Productos Registrados</h2></center>
-      
-      <table id="productosTable" class="table table-bordered">
-          <thead class="thead-dark">
-              <tr table-warning>
-                  <th>Nombre</th>
-                  <th>Precio</th>
-                  <th>Descripción</th>
-              </tr>
-          </thead>
-          <tbody id="productosBody"></tbody>
-      </table>
-  </div>
-
-  <script src="crud.js"></script>
-    <!--FIN EL CRUD-->
     
 
-      <!-- Footer -->
+     <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -235,8 +233,22 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var usuarioGuardado = localStorage.getItem('usuario');
+    if (usuarioGuardado) {
+        var usuario = JSON.parse(usuarioGuardado);
+        document.getElementById('nombreUsuario').textContent = usuario.nombre;
+        document.getElementById('apellidoUsuario').textContent = usuario.apellido;
+        document.getElementById('emailUsuario').textContent = usuario.email;
+        document.getElementById('ciudadUsuario').textContent = usuario.ciudad;
+        document.getElementById('estadoUsuario').textContent = usuario.estado;
+    }
+});
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>

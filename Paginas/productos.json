@@ -1,0 +1,65 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Disfraz de Chucky",
+        "precio": 289.00,
+        "descripcion": "¡Lleva el terror a la vida real con nuestro Disfraz de Chucky! Perfecto para Halloween, fiestas de disfraces o simplemente para divertirse, este disfraz de Halloween hará que tu pequeño se sienta como el muñeco favorito de todos. ¡Transforma a tus pequeños con nuestros disfraces para Halloween! Este traje de Chucky es la elección perfecta causar escalofríos el Día de Muertos! Añade un juguete más a tu colección con nuestro disfraz de Chucky... ¡Ordénalo hoy y prepárate para asustar!"
+      },
+      {
+        "id": 2,
+        "nombre": "Disfraz de Conejo",
+        "precio": 829.00,
+        "descripcion": "Ya sea que te estés preparando para una fiesta de disfraces, una sesión de fotos peculiar o simplemente quieras agregar un toque juguetón a tu guardarropa, este traje de conejo es la elección perfecta. Su diseño detallado y su estilo único te permiten destacar entre la multitud y crear recuerdos inolvidables en cualquier ocasión."
+      },
+      {
+        "id": 3,
+        "nombre": "Disfraz de fantasma",
+        "precio": 699.99,
+        "descripcion": "Este disfraz de fantasma no es solo una pieza de vestuario, sino una puerta de entrada a un mundo de fantasía y diversión. Confeccionado con telas de alta calidad y detalles cuidadosamente elaborados, este disfraz garantiza una apariencia espectacular y un ajuste cómodo "
+      },
+      {
+        "id": 4,
+        "nombre": "Disfraz de Superman",
+        "precio": 1044.00,
+        "descripcion": "Este disfraz de Superman no es solo un conjunto de vestuario, sino una invitación a volar alto y abrazar el espíritu heroico que vive en cada uno de nosotros. Fabricado con materiales de alta calidad y detalles que capturan la esencia del icónico superhéroe, este traje garantiza una apariencia imponente y un ajuste cómodo para que puedas enfrentar cualquier desafío "
+      },
+      {
+        "id": 5,
+        "nombre": "Disfraz de Supergirl",
+        "precio": 560.00,
+        "descripcion": "Este disfraz de Supergirl no es simplemente una vestimenta, sino una declaración de poder femenino y determinación. Confeccionado con materiales de primera calidad y detalles que rinden homenaje al icónico símbolo de la esperanza, este traje garantiza una apariencia impecable "
+      },
+      {
+        "id": 6,
+        "nombre": "Disfraz de Mariposa",
+        "precio": 498.00,
+        "descripcion": "Ya sea que te estés preparando para una fiesta de disfraces, un festival de primavera o simplemente desees añadir un toque de fantasía a tu vida cotidiana, este disfraz de mariposa es la elección perfecta. Su diseño inspirado en la belleza etérea de estos majestuosos insectos te permite destacar entre la multitud y crear un aura de magia y misterio dondequiera que vayas."
+      },
+      {
+        "id": 7,
+        "nombre": "Disfraz de Pollo",
+        "precio": 749.00,
+        "descripcion": "No pierdas la oportunidad de convertirte en el centro de atención y hacer que todos se rían a carcajadas con nuestro divertido disfraz de pollo inflable. ¡Haz tu pedido ahora y prepárate para desencadenar una tormenta de risas y diversión dondequiera que vayas!"
+      },
+      {
+        "id": 8,
+        "nombre": "Disfraz de Spiderman",
+        "precio": 751.00,
+        "descripcion": "Ya sea que estés preparando a tu pequeño arácnido para su primera fiesta de disfraces, una sesión de fotos adorable o simplemente desees capturar momentos especiales llenos de aventura, este disfraz de Spiderman es la elección perfecta. Su diseño inspirado en el icónico superhéroe te permite convertir a tu bebé en el héroe de la casa y crear recuerdos inolvidables en cada paso del camino."
+      },
+      {
+        "id": 9,
+        "nombre": "Disfraz de Tiburon Inflable",
+        "precio": 469.00,
+        "descripcion": "¡Bienvenidos a nuestra tienda en línea, donde la diversión y la originalidad se unen para crear momentos inolvidables! Presentamos nuestro increíble disfraz de tiburón inflable, diseñado para aquellos que buscan hacer una entrada espectacular en cualquier evento acuático, fiesta de disfraces o simplemente para destacar con estilo y humor."
+      },
+      {
+        "id": 10,
+        "nombre": "Disfraz de León",
+        "precio": 589.00,
+        "descripcion": "No pierdas la oportunidad de despertar el espíritu salvaje de tu pequeño con nuestro encantador disfraz de león para bebé. ¡Haz tu pedido ahora y prepárate para rugir de alegría con tu pequeño cachorro!"
+      }
+    ]
+  }
+  
