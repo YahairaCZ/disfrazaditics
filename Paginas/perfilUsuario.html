@@ -284,20 +284,19 @@
 </footer>
 <!-- Footer -->
 <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var usuarioGuardado = localStorage.getItem('usuario');
-            if (usuarioGuardado) {
-                var usuario = JSON.parse(usuarioGuardado);
-                var userInfoDiv = document.getElementById('userInfo');
-                userInfoDiv.innerHTML = `
-                    <p>Nombre: ${usuario.nombre} ${usuario.apellido}</p>
-                    <p>Correo Electrónico: ${usuario.email}</p>
-                    <p>Ciudad: ${usuario.ciudad}</p>
-                    <p>Estado: ${usuario.estado}</p>
-                `;
-            }
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var usuarioGuardado = localStorage.getItem('usuario');
+        if (usuarioGuardado) {
+            var usuario = JSON.parse(usuarioGuardado);
+            // Seleccionamos los elementos por su ID y asignamos los valores correspondientes
+            document.getElementById('nombreUsuario').textContent = usuario.nombre;
+            document.getElementById('apellidoUsuario').textContent = usuario.apellido;
+            document.getElementById('emailUsuario').textContent = usuario.email;
+            document.getElementById('ciudadUsuario').textContent = usuario.ciudad;
+            document.getElementById('estadoUsuario').textContent = usuario.estado;
+        }
+    });
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
