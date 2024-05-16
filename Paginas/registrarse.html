@@ -115,6 +115,13 @@
               Por favor, ingrese un estado.
             </div>
           </div>
+        <div class="col-md-12">
+            <label for="validationCustom05" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+              Por favor, ingrese una contraseña.
+            </div>
+          </div>
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -264,13 +271,15 @@
             var email = document.getElementById('typeEmailX').value;
             var ciudad = document.getElementById('validationCustom03').value;
             var estado = document.getElementById('validationCustom04').value;
+            var contraseña = document.getElementById('validationCustom05').value; // Obtener el valor de la contraseña
 
             var usuario = {
                 nombre: nombre,
                 apellido: apellido,
                 email: email,
                 ciudad: ciudad,
-                estado: estado
+                estado: estado,
+                contraseña: contraseña // Agregar la contraseña al objeto usuario
             };
 
             localStorage.setItem('usuario', JSON.stringify(usuario));
