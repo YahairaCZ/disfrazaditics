@@ -551,6 +551,32 @@
             container.appendChild(item.producto);
         });
     }
+
+    function ordenarProductos(order) {
+        const productos = document.querySelectorAll('.col');
+        const items = [];
+
+        // Recopilar nombres de los productos
+        productos.forEach(producto => {
+            const nombre = producto.querySelector('productName').textContent.trim(); // Asumiendo que tienes un elemento con la clase 'product-name' que contiene el nombre del producto
+            items.push({ nombre, producto });
+        });
+
+        // Ordenar los productos alfabéticamente
+        if (order === 'alpha-asc') {
+            items.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        } else if (order === 'alpha-desc') {
+            items.sort((a, b) => b.nombre.localeCompare(a.nombre));
+        }
+
+        // Reorganizar productos en el HTML según el nuevo orden
+        const container = document.querySelector('.container .row');
+        container.innerHTML = '';
+
+        items.forEach(item => {
+            container.appendChild(item.producto);
+        });
+    }
 </script>
             
 </body>
