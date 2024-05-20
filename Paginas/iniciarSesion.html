@@ -128,11 +128,11 @@
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
 
-            // Get the stored values from localStorage
+            // Retrieve the stored values from localStorage
             var storedEmail = localStorage.getItem('email');
             var storedPassword = localStorage.getItem('password');
 
-            // Check if the email and password match
+            // Check if email and password are correct
             if (email === storedEmail && password === storedPassword) {
                 window.location.href = 'perfilUsuario.html';
             } else {
