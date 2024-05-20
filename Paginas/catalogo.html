@@ -550,27 +550,6 @@
         precios.forEach(item => {
             container.appendChild(item.producto);
         });
-
-                // Recopilar nombres de los productos desde el atributo data-name
-        productos.forEach(producto => {
-            const nombre = producto.getAttribute('data-name').trim();
-            items.push({ nombre, producto });
-        });
-
-        // Ordenar los productos alfabéticamente
-        if (order === 'alpha-asc') {
-            items.sort((a, b) => a.nombre.localeCompare(b.nombre));
-        } else if (order === 'alpha-desc') {
-            items.sort((a, b) => b.nombre.localeCompare(a.nombre));
-        }
-
-        // Reorganizar productos en el HTML según el nuevo orden
-        const container = document.querySelector('.container .row');
-        container.innerHTML = '';
-
-        items.forEach(item => {
-            container.appendChild(item.producto);
-        });
     }
 </script>
             
