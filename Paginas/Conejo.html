@@ -36,6 +36,25 @@
             // Mostrar mensaje de confirmación al usuario
             alert('El producto ha sido agregado a tu lista de deseos.');
         }
+         function agregarAlCarrito(nombreProducto, precioProducto) {
+    // Verificar si ya existe el carrito en localStorage
+    var carrito = localStorage.getItem('carrito');
+    if (!carrito) {
+        carrito = [];
+    } else {
+        carrito = JSON.parse(carrito);
+    }
+
+    // Agregar el producto al carrito
+    carrito.push({ nombre: nombreProducto, precio: precioProducto });
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Mostrar mensaje de confirmación al usuario
+    alert('El producto ha sido agregado a tu carrito de compras.');
+}
+
     </script>
     
 </head>
@@ -144,29 +163,11 @@
                 <!--Agregar al carrito-->
                 <div class="col-lg-12">
                     <button type="button" onclick="agregarALaListaDeDeseos('Disfraz de Conejo', 829)" class="btn btn-primary">Agregar a la lista de deseos</button>
-                    <form target="_self" action="https://www.paypal.com/cgi-bin/webscr"method="post">
-                        <!-- Identify your business so that you can collect the payments. -->
-                        <input type="hidden" name="business" value="kin@kinskards.com">
-                    
-                        <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="add" value="1">
-                    
-                        <!-- Specify details about the item that buyers will purchase. -->
-                        <input type="hidden" name="item_name" value="Dizfraz de Conejo">
-                        <input type="hidden" name="amount" value="829">
-                        <input type="hidden" name="currency_code" value="MXN">
-                    
-                        <!-- Display the payment button. -->
-                        <input type="image" name="submit"
-                            src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
-                            alt="Add to Cart">
-                        <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-                    </form>
+                   <br>
                     <br>
-                    <div id="paypal-button-container" style="text-align: center"></div> 
-                  </div>
+                    <button type="button" onclick="agregarAlCarrito('Disfraz de Conejo', 829.00)" class="btn btn-primary">Agregar a carrito</button>
+                    <br>  
+                    <br> 
                 <!--Fin agregar al carrito-->
                 
             <!--Paypal js botones-->
