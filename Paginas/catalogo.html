@@ -553,7 +553,6 @@ function ordenarPorPrecio(order, productos) {
         precios.sort((a, b) => b.precio - a.precio);
     }
 
-    // Reorganizar productos en el HTML según el nuevo orden
     const container = document.querySelector('.container .row');
     container.innerHTML = '';
 
