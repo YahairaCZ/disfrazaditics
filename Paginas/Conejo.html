@@ -36,6 +36,24 @@
             // Mostrar mensaje de confirmación al usuario
             alert('El producto ha sido agregado a tu lista de deseos.');
         }
+          function agregarAcarrito(nombreProducto, precioProducto) {
+            // Verificar si ya existe la lista de deseos en localStorage
+            var carrito = localStorage.getItem('carrito');
+            if (!carrito) {
+                carrito = [];
+            } else {
+                carrito = JSON.parse(listaDeseos);
+            }
+    
+            // Agregar el producto a la lista de deseos
+            carrito.push({ nombre: nombreProducto, precio: precioProducto });
+    
+            // Guardar la lista de deseos actualizada en localStorage
+            localStorage.setItem('carrito', JSON.stringify(listaDeseos));
+    
+            // Mostrar mensaje de confirmación al usuario
+            alert('El producto ha sido agregado al carrito.');
+        }
     </script>
     
 </head>
