@@ -577,7 +577,6 @@ function ordenarAlfabeticamente(order, productos) {
         nombres.sort((a, b) => b.nombre.localeCompare(a.nombre));
     }
 
-    // Reorganizar productos en el HTML según el nuevo orden
     const container = document.querySelector('.container .row');
     container.innerHTML = '';
 
