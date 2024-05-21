@@ -159,26 +159,10 @@
                 <div class="col-lg-12">
                     <button type="button" onclick="agregarALaListaDeDeseos('Disfraz de Fantasma', 699.99)" class="btn btn-primary">Agregar a la lista de deseos</button>
                     
-                    <form target="_self" action="https://www.paypal.com/cgi-bin/webscr"method="post">
-                        <!-- Identify your business so that you can collect the payments. -->
-                        <input type="hidden" name="business" value="kin@kinskards.com">
-                    
-                        <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="add" value="1">
-                    
-                        <!-- Specify details about the item that buyers will purchase. -->
-                        <input type="hidden" name="item_name" value="Dizfraz de Fantasma">
-                        <input type="hidden" name="amount" value="699.99">
-                        <input type="hidden" name="currency_code" value="MXN">
-                    
-                        <!-- Display the payment button. -->
-                        <input type="image" name="submit"
-                            src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
-                            alt="Add to Cart">
-                        <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-                    </form>
+                    <br>
+                    <button type="button" onclick="agregarAlCarrito('Disfraz de Fantasma', 699.99)" class="btn btn-primary">Agregar a carrito</button>
+                    <br>  
+                    <br> 
                     <br>
                     <div id="paypal-button-container" style="text-align: center"></div> 
                   </div>
