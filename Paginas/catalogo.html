@@ -561,6 +561,30 @@ function ordenarPorPrecio(order, productos) {
         container.appendChild(item.producto);
     });
 }
+function ordenarAlfabeticamente(order, productos) {
+    const nombres = [];
+
+    // Recopilar nombres de los productos
+    productos.forEach(producto => {
+        const nombre = producto.getAttribute('data-name').toLowerCase();
+        nombres.push({ nombre, producto });
+    });
+
+    // Ordenar los nombres
+    if (order === 'alpha-asc') {
+        nombres.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    } else if (order === 'alpha-desc') {
+        nombres.sort((a, b) => b.nombre.localeCompare(a.nombre));
+    }
+
+    // Reorganizar productos en el HTML según el nuevo orden
+    const container = document.querySelector('.container .row');
+    container.innerHTML = '';
+
+    nombres.forEach(item => {
+        container.appendChild(item.producto);
+    });
+}
 </script>
             
 </body>
