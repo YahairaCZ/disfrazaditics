@@ -570,7 +570,6 @@ function ordenarAlfabeticamente(order, productos) {
         nombres.push({ nombre, producto });
     });
 
-    // Ordenar los nombres
     if (order === 'alpha-asc') {
         nombres.sort((a, b) => a.nombre.localeCompare(b.nombre));
     } else if (order === 'alpha-desc') {
