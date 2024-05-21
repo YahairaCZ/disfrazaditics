@@ -564,7 +564,6 @@ function ordenarPorPrecio(order, productos) {
 function ordenarAlfabeticamente(order, productos) {
     const nombres = [];
 
-    // Recopilar nombres de los productos
     productos.forEach(producto => {
         const nombre = producto.getAttribute('data-name').toLowerCase();
         nombres.push({ nombre, producto });
