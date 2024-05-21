@@ -36,6 +36,24 @@
             // Mostrar mensaje de confirmación al usuario
             alert('El producto ha sido agregado a tu lista de deseos.');
         }
+        function agregarACarrito(nombreProducto, precioProducto) {
+            // Verificar si ya existe la lista de deseos en localStorage
+            var carrito = localStorage.getItem('carrito');
+            if (!carrito) {
+                carrito = [];
+            } else {
+                carrito = JSON.parse(carrito);
+            }
+    
+            // Agregar el producto a la lista de deseos
+            carrito.push({ nombre: nombreProducto, precio: precioProducto });
+    
+            // Guardar la lista de deseos actualizada en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+    
+            // Mostrar mensaje de confirmación al usuario
+            alert('El producto ha sido agregado al carrito.');
+        }
     </script>
 </head>
 <body>
@@ -139,33 +157,15 @@
 
                 <!--Agregar al carrito-->
                 <div class="col-lg-12">
-                    <button type="button" onclick="agregarALaListaDeDeseos('Disfraz de Spiderman', 751.00)" class="btn btn-primary">Agregar a la lista de deseos</button>
-
-                    <form target="_self" action="https://www.paypal.com/cgi-bin/webscr"method="post">
-                        <!-- Identify your business so that you can collect the payments. -->
-                        <input type="hidden" name="business" value="kin@kinskards.com">
-                    
-                        <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="add" value="1">
-                    
-                        <!-- Specify details about the item that buyers will purchase. -->
-                        <input type="hidden" name="item_name" value="Dizfraz de Spiderman">
-                        <input type="hidden" name="amount" value="751">
-                        <input type="hidden" name="currency_code" value="MXN">
-                    
-                        <!-- Display the payment button. -->
-                        <input type="image" name="submit"
-                            src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
-                            alt="Add to Cart">
-                        <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-                    </form>
                     <br>
-                    <div id="paypal-button-container" style="text-align: center"></div> 
+                    <button type="button" onclick="agregarALaListaDeDeseos('Disfraz de Spiderman', 751.00)" class="btn btn-primary">Agregar a la lista de deseos</button>
+                    <br>
+                    <br>
+                    <button type="button" onclick="agregarACarrito('Disfraz de Spiderman', 751.00)" class="btn btn-primary">Agregar a carrito</button>
+                    <br>  
+                    <br> 
                   </div>
-                <script src="https://www.paypal.com/sdk/js?client-id=AcijD9iLwutz05H0o-Xujv6DSt5eCFIHQVsvQgJ7liPeDG1MfONroxPUCSuqT2QDLRMLwdk6H8NBPULo&currency=MXN"></script>
-            <!--Fin agregar al carrito-->
+                 <!--Fin agregar al carrito-->
             <!--Paypal js botones-->
             <div id="paypal-button-container"></div>
             <script>
