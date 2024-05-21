@@ -110,6 +110,7 @@
     <!-- TERMINA NAVBAR :) -->
 
     <!--Carrito-->
+    <h1>Carrito de Compras</h1>
     <div class="card bg-body-tertiary text-black" style="border-radius: 1rem;">
         <div class="card-body p-5 text-center">
             <table class="table">
@@ -123,15 +124,138 @@
                 </thead>
                 <tbody id="carritoBody"></tbody>
             </table>
+            <h3>Total: $<span id="total">0.00</span></h3>
         </div>
     </div>
     <script>
-        var carrito = localStorage.getItem('carrito');
-        if (carrito) {
-            carrito = JSON.parse(carrito);
-            var carritoBody = document.getElementById('carritoBody');
-            var total = 0;
-    
+        document.addEventListener("DOMContentLoaded", () => {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let totalCarrito = parseFloat(localStorage.getItem('totalCarrito')) || 0;
+    const productosDiv = document.getElementById('productos');
+    const carritoDiv = document.getElementById('carrito');
+    const totalSpan = document.getElementById('total');
+
+    // Función para guardar el carrito en localStorage
+    function guardarCarrito() {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem('totalCarrito', totalCarrito.toFixed(2));
+    }
+
+    function agregarAlCarrito(producto) {
+        const item = carrito.find(item => item.id === producto.id);
+        if (item) {
+            item.cantidad++;
+        } else {
+            carrito.push({ ...producto, cantidad: 1 });
+        }
+        totalCarrito += producto.precio;
+        guardarCarrito();
+        actualizarCarrito();
+    }
+
+   
+    function actualizarCarrito() {
+        if (!carritoDiv) return;
+
+        carritoDiv.innerHTML = '';
+        let total = 0;
+
+        carrito.forEach(item => {
+            total += item.precio * item.cantidad;
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item-carrito');
+            itemDiv.innerHTML = `
+                <h4>${item.nombre}</h4>
+                <p>Precio: $${item.precio.toFixed(2)}</p>
+                <p>Cantidad: ${item.cantidad}</p>
+                <button data-id="${item.id}">Eliminar</button>
+            `;
+            carritoDiv.appendChild(itemDiv);
+        });
+
+        totalSpan.textContent = total.toFixed(2);
+
+        carritoDiv.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const id = parseInt(e.target.dataset.id);
+                eliminarDelCarrito(id);
+            }
+        });
+    }
+
+    function eliminarDelCarrito(id) {
+        const index = carrito.findIndex(item => item.id === id);
+        if (index > -1) {
+            totalCarrito -= carrito[index].precio * carrito[index].cantidad;
+            carrito.splice(index, 1);
+        }
+        guardarCarrito();
+        actualizarCarrito();
+    }
+
+    if (productosDiv) {
+        fetch('chucky.json')
+            .then(response => response.json())
+            .then(data => {
+                const productos = data.productos1;
+                productos.forEach(producto => {
+                    const productoDiv = document.createElement('div');
+                    productoDiv.classList.add('producto');
+                    productoDiv.innerHTML = `
+                        <h3>${producto.nombre}</h3>
+                        <p>Precio: $${producto.precio.toFixed(2)}</p>
+                        <a href="producto.html?id=${producto.id}">Ver más</a>
+                        <button data-id="${producto.id}">Agregar al carrito</button>
+                    `;
+                    productosDiv.appendChild(productoDiv);
+                });
+
+                productosDiv.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'BUTTON') {
+                        const id = parseInt(e.target.dataset.id);
+                        const producto = productos.find(p => p.id === id);
+                        agregarAlCarrito(producto);
+                    }
+                });
+            });
+    }
+
+    if (document.body.contains(document.getElementById('nombre'))) {
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+        if (productId) {
+            fetch('chucky.json')
+                .then(response => response.json())
+                .then(data => {
+                    const producto = data.productos1.find(p => p.id == productId);
+                    if (producto) {
+                        document.getElementById('nombre').textContent = producto.nombre;
+                        document.getElementById('descripcion').textContent = producto.descripcion;
+                        document.getElementById('precio').textContent = producto.precio.toFixed(2);
+                        
+                        document.getElementById('agregarCarrito').addEventListener('click', () => {
+                            agregarAlCarrito(producto);
+                        });
+                    }
+                });
+        }
+    }
+
+    // Cargar el carrito en carrito.html
+    if (carritoDiv) {
+        actualizarCarrito();
+    }
+});
+
+        var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        var totalCarrito = parseFloat(localStorage.getItem('totalCarrito')) || 0;
+        var carritoBody = document.getElementById('carritoBody');
+        var totalSpan = document.getElementById('total');
+
+        function actualizarCarrito() {
+            carritoBody.innerHTML = '';
+            let total = 0;
+
             carrito.forEach(function(producto, index) {
                 total += producto.precio * producto.cantidad;
                 var fila = document.createElement('tr');
@@ -143,15 +267,19 @@
                 `;
                 carritoBody.appendChild(fila);
             });
-    
-            document.getElementById('total').textContent = total.toFixed(2);
+
+            totalSpan.textContent = total.toFixed(2);
         }
 
         function eliminarProducto(index) {
+            totalCarrito -= carrito[index].precio * carrito[index].cantidad;
             carrito.splice(index, 1);
             localStorage.setItem('carrito', JSON.stringify(carrito));
+            localStorage.setItem('totalCarrito', totalCarrito.toFixed(2));
             location.reload(); 
         }
+
+        actualizarCarrito();
     </script>
 <!--FIn carrito-->
 
