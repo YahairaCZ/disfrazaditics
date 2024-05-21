@@ -1,13 +1,13 @@
 var carrito = localStorage.getItem('carrito');
 if (carrito) {
     carrito = JSON.parse(carrito);
-    var listaDeseosBody = document.getElementById('carritoBody');
+    var carritoBody = document.getElementById('carritoBody');
 
     // Mostrar cada producto en la lista de deseos
     carrito.forEach(function(producto, index) {
         var fila = document.createElement('tr');
         fila.innerHTML = '<td>' + producto.nombre + '</td><td>' + producto.precio + '</td><td><button onclick="eliminarProducto(' + index + ')">Eliminar</button></td>';
-        listaDeseosBody.appendChild(fila);
+        carritoBody.appendChild(fila);
     });
 }
 
