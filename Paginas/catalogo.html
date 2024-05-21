@@ -536,6 +536,31 @@
         ordenarAlfabeticamente(order, productos);
     }
 }
+function ordenarPorPrecio(order, productos) {
+    const precios = [];
+
+    // Recopilar precios de los productos
+    productos.forEach(producto => {
+        const precioString = producto.querySelector('.font-weight-semibold').textContent.replace('$', '');
+        const precio = parseFloat(precioString);
+        precios.push({ precio, producto });
+    });
+
+    // Ordenar los precios
+    if (order === 'asc') {
+        precios.sort((a, b) => a.precio - b.precio);
+    } else if (order === 'desc') {
+        precios.sort((a, b) => b.precio - a.precio);
+    }
+
+    // Reorganizar productos en el HTML según el nuevo orden
+    const container = document.querySelector('.container .row');
+    container.innerHTML = '';
+
+    precios.forEach(item => {
+        container.appendChild(item.producto);
+    });
+}
 </script>
             
 </body>
