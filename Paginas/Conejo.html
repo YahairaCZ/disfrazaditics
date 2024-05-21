@@ -42,14 +42,14 @@
             if (!carrito) {
                 carrito = [];
             } else {
-                carrito = JSON.parse(listaDeseos);
+                carrito = JSON.parse(carrito);
             }
     
-            // Agregar el producto a la lista de deseos
+            // Agregar el producto al carrito
             carrito.push({ nombre: nombreProducto, precio: precioProducto });
     
-            // Guardar la lista de deseos actualizada en localStorage
-            localStorage.setItem('carrito', JSON.stringify(listaDeseos));
+            // Guardar carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
     
             // Mostrar mensaje de confirmación al usuario
             alert('El producto ha sido agregado al carrito.');
