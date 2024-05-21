@@ -127,7 +127,6 @@
             listaDeseos = JSON.parse(listaDeseos);
             var listaDeseosBody = document.getElementById('listaDeseosBody');
     
-            // Mostrar cada producto en la lista de deseos
             listaDeseos.forEach(function(producto, index) {
                 var fila = document.createElement('tr');
                 fila.innerHTML = '<td>' + producto.nombre + '</td><td>' + producto.precio + '</td><td><button onclick="eliminarProducto(' + index + ')">Eliminar</button></td>';
@@ -138,7 +137,7 @@
         function eliminarProducto(index) {
             listaDeseos.splice(index, 1);
             localStorage.setItem('listaDeseos', JSON.stringify(listaDeseos));
-            location.reload(); // Recargar la página para actualizar la lista
+            location.reload(); 
         }
     </script>
     </div>
