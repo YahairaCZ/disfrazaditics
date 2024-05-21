@@ -89,7 +89,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                        href="https://yahairacz.github.io/disfrazaditics/carrito.html">Carrito</a>
+                        href="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Carrito</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -115,19 +115,18 @@
             <tr>
                 <th>Producto</th>
                 <th>Precio</th>
+                <th>Eliminar de Deseados</th>
             </tr>
         </thead>
         <tbody id="listaDeseosBody"></tbody>
     </table>
     
     <script>
-        // Obtener la lista de deseos del almacenamiento local
         var listaDeseos = localStorage.getItem('listaDeseos');
         if (listaDeseos) {
             listaDeseos = JSON.parse(listaDeseos);
             var listaDeseosBody = document.getElementById('listaDeseosBody');
     
-            // Mostrar cada producto en la lista de deseos
             listaDeseos.forEach(function(producto, index) {
                 var fila = document.createElement('tr');
                 fila.innerHTML = '<td>' + producto.nombre + '</td><td>' + producto.precio + '</td><td><button onclick="eliminarProducto(' + index + ')">Eliminar</button></td>';
@@ -135,11 +134,10 @@
             });
         }
 
-        // Función para eliminar un producto de la lista de deseos
         function eliminarProducto(index) {
             listaDeseos.splice(index, 1);
             localStorage.setItem('listaDeseos', JSON.stringify(listaDeseos));
-            location.reload(); // Recargar la página para actualizar la lista
+            location.reload(); 
         }
     </script>
     </div>

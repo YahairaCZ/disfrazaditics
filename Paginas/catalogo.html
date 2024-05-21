@@ -57,7 +57,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                        href="https://yahairacz.github.io/disfrazaditics/carrito.html">Carrito</a>
+                        href="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Carrito</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -522,31 +522,57 @@
 
 <script>
     function ordenarProductos(order) {
-        const productos = document.querySelectorAll('.col');
-        const precios = [];
+    const productos = document.querySelectorAll('.col');
 
-        // Recopilar precios de los productos
-        productos.forEach(producto => {
-            const precioString = producto.querySelector('.font-weight-semibold').textContent.replace('$', '');
-            const precio = parseFloat(precioString);
-            precios.push({ precio, producto });
-        });
-
-        // Ordenar los precios
-        if (order === 'asc') {
-            precios.sort((a, b) => a.precio - b.precio);
-        } else if (order === 'desc') {
-            precios.sort((a, b) => b.precio - a.precio);
-        }
-
-        // Reorganizar productos en el HTML según el nuevo orden
-        const container = document.querySelector('.container .row');
-        container.innerHTML = '';
-
-        precios.forEach(item => {
-            container.appendChild(item.producto);
-        });
+    if (order === 'asc' || order === 'desc') {
+        ordenarPorPrecio(order, productos);
+    } else {
+        ordenarAlfabeticamente(order, productos);
     }
+}
+function ordenarPorPrecio(order, productos) {
+    const precios = [];
+
+    productos.forEach(producto => {
+        const precioString = producto.querySelector('.font-weight-semibold').textContent.replace('$', '');
+        const precio = parseFloat(precioString);
+        precios.push({ precio, producto });
+    });
+
+    if (order === 'asc') {
+        precios.sort((a, b) => a.precio - b.precio);
+    } else if (order === 'desc') {
+        precios.sort((a, b) => b.precio - a.precio);
+    }
+
+    const container = document.querySelector('.container .row');
+    container.innerHTML = '';
+
+    precios.forEach(item => {
+        container.appendChild(item.producto);
+    });
+}
+function ordenarAlfabeticamente(order, productos) {
+    const nombres = [];
+
+    productos.forEach(producto => {
+        const nombre = producto.getAttribute('data-name').toLowerCase();
+        nombres.push({ nombre, producto });
+    });
+
+    if (order === 'alpha-asc') {
+        nombres.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    } else if (order === 'alpha-desc') {
+        nombres.sort((a, b) => b.nombre.localeCompare(a.nombre));
+    }
+
+    const container = document.querySelector('.container .row');
+    container.innerHTML = '';
+
+    nombres.forEach(item => {
+        container.appendChild(item.producto);
+    });
+}
 </script>
             
 </body>
