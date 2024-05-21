@@ -546,7 +546,6 @@ function ordenarPorPrecio(order, productos) {
         precios.push({ precio, producto });
     });
 
-    // Ordenar los precios
     if (order === 'asc') {
         precios.sort((a, b) => a.precio - b.precio);
     } else if (order === 'desc') {
