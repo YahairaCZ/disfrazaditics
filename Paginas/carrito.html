@@ -19,11 +19,42 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="estilos.css">
-    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AcijD9iLwutz05H0o-Xujv6DSt5eCFIHQVsvQgJ7liPeDG1MfONroxPUCSuqT2QDLRMLwdk6H8NBPULo&currency=MXN"></script>   
-    <link rel="stylesheet" href="carrito.css">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
@@ -81,30 +112,40 @@
     <!--Carrito-->
     <div class="card bg-body-tertiary text-black" style="border-radius: 1rem;">
         <div class="card-body p-5 text-center">
-            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Eliminar del Carrito</th>
+                    </tr>
+                </thead>
+                <tbody id="carritoBody"></tbody>
+            </table>
+            <h3>Total: $<span id="total">0.00</span></h3>
+        </div>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Eliminar de carrito</th>
-            </tr>
-        </thead>
-        <tbody id="carritoBody"></tbody>
-    </table>
-    
     <script>
-        var carrito= localStorage.getItem('carrito');
+        var carrito = localStorage.getItem('carrito');
         if (carrito) {
             carrito = JSON.parse(carrito);
             var carritoBody = document.getElementById('carritoBody');
+            var total = 0;
     
             carrito.forEach(function(producto, index) {
+                total += producto.precio * producto.cantidad;
                 var fila = document.createElement('tr');
-                fila.innerHTML = '<td>' + producto.nombre + '</td><td>' + producto.precio + '</td><td><button onclick="eliminarProducto(' + index + ')">Eliminar</button></td>';
+                fila.innerHTML = `
+                    <td>${producto.nombre}</td>
+                    <td>$${producto.precio.toFixed(2)}</td>
+                    <td>${producto.cantidad}</td>
+                    <td><button onclick="eliminarProducto(${index})">Eliminar</button></td>
+                `;
                 carritoBody.appendChild(fila);
             });
+    
+            document.getElementById('total').textContent = total.toFixed(2);
         }
 
         function eliminarProducto(index) {
@@ -113,7 +154,6 @@
             location.reload(); 
         }
     </script>
-    </div>
 <!--FIn carrito-->
 
   <!-- Footer -->
