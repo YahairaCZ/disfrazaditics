@@ -539,7 +539,6 @@
 function ordenarPorPrecio(order, productos) {
     const precios = [];
 
-    // Recopilar precios de los productos
     productos.forEach(producto => {
         const precioString = producto.querySelector('.font-weight-semibold').textContent.replace('$', '');
         const precio = parseFloat(precioString);
