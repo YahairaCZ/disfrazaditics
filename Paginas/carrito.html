@@ -127,11 +127,6 @@
                 </thead>
                 <tbody id="carritoBody"></tbody>
             </table>
-            <div>
-                <p>Subtotal: $<span id="subtotal">0.00</span></p>
-                <p>Impuesto (16%): $<span id="impuesto">0.00</span></p>
-                <p>Total: $<span id="total">0.00</span></p>
-            </div>
         </div>
     </div>
     <script>
@@ -153,19 +148,11 @@
                 fila.innerHTML = `
                     <td>${producto.nombre}</td>
                     <td>$${producto.precio.toFixed(2)}</td>
-                    <td><button onclick="eliminarProducto(${index})">Eliminar</button> <div id="paypal-button-container"></div></td>
+                    <td><button onclick="eliminarProducto(${index})">Eliminar</button>
+                        <div id="paypal-button-container"></div></td>
                 `;
                 carritoBody.appendChild(fila);
             });
-
-            // Calcular el impuesto y el total
-            const impuesto = subtotal * 0.16; // 16% de impuesto
-            const total = subtotal + impuesto;
-
-            // Actualizar los valores en la página
-            document.getElementById('subtotal').textContent = subtotal.toFixed(2);
-            document.getElementById('impuesto').textContent = impuesto.toFixed(2);
-            document.getElementById('total').textContent = total.toFixed(2);
             }
 
         function eliminarProducto(index) {
