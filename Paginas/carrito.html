@@ -95,6 +95,10 @@
                         <a class="nav-link"
                         href="https://yahairacz.github.io/disfrazaditics/Paginas/carrito.html">Carrito</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                        href="https://yahairacz.github.io/disfrazaditics/Paginas/ayuda.html">Ayuda</a>
+                    </li>
                 </ul>
                 <div class="d-flex">
                     <div class="ml-auto p-1">
@@ -123,20 +127,27 @@
                 </thead>
                 <tbody id="carritoBody"></tbody>
             </table>
+            <div>
+                <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                <p>Impuesto (16%): $<span id="impuesto">0.00</span></p>
+                <p>Total: $<span id="total">0.00</span></p>
+            </div>
         </div>
     </div>
     <script>
- var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        var totalCarrito = parseFloat(localStorage.getItem('totalCarrito')) || 0;
+        const impuestoPorcentaje = 0.16; // 16% de IVA
+        var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         var carritoBody = document.getElementById('carritoBody');
+        var subtotalSpan = document.getElementById('subtotal');
+        var impuestoSpan = document.getElementById('impuesto');
         var totalSpan = document.getElementById('total');
 
         function actualizarCarrito() {
             carritoBody.innerHTML = '';
-            let total = 0;
+            let subtotal = 0;
 
             carrito.forEach(function(producto, index) {
-                total += producto.precio * producto.cantidad;
+                subtotal += producto.precio * producto.cantidad;
                 var fila = document.createElement('tr');
                 fila.innerHTML = `
                     <td>${producto.nombre}</td>
@@ -146,11 +157,17 @@
                 carritoBody.appendChild(fila);
             });
 
+            // Calcular impuestos y total
+            const impuesto = subtotal * impuestoPorcentaje;
+            const total = subtotal + impuesto;
+
+            // Actualizar los valores en la página
+            subtotalSpan.textContent = subtotal.toFixed(2);
+            impuestoSpan.textContent = impuesto.toFixed(2);
             totalSpan.textContent = total.toFixed(2);
         }
 
         function eliminarProducto(index) {
-            totalCarrito -= carrito[index].precio * carrito[index].cantidad;
             carrito.splice(index, 1);
             localStorage.setItem('carrito', JSON.stringify(carrito));
             actualizarCarrito(); // Actualizar carrito en lugar de recargar la página
