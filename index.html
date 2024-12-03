@@ -41,6 +41,17 @@
         .navbar-brand img:hover {
         transform: scale(1.1);
         }
+        .card {
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+
         </style> 
     </head>
     <body>
@@ -141,9 +152,9 @@
     <div class="row text-center">
         <h2 class="mb-4">¡Los más vendidos!</h2>
         <div class="col-md-4">
-            <div class="card product-card">
+            <div class="card product-card h-100">
                 <img src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/Productos/chucky.jpg?raw=true" class="card-img-top" alt="Disfraz Chucky">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Disfraz Chucky</h5>
                     <p class="card-text">$289.00 MXN</p>
                     <a href="https://yahairacz.github.io/disfrazaditics/Productos/chucky.html" class="btn btn-warning">Ver</a>
@@ -151,9 +162,9 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card product-card">
+            <div class="card product-card h-100">
                 <img src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/Productos/superman.jpg?raw=true" class="card-img-top" alt="Disfraz Chucky">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Disfraz de Superman</h5>
                     <p class="card-text">$1044.00</p>
                     <a href="https://yahairacz.github.io/disfrazaditics/Paginas/Superman.html" class="btn btn-warning">Ver</a>
@@ -161,9 +172,9 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card product-card">
+            <div class="card product-card h-100">
                 <img src="https://github.com/YahairaCZ/disfrazaditics/blob/main/Recursos/Productos/pollo.jpg?raw=true" class="card-img-top" alt="Disfraz Chucky">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Disfraz de Pollo</h5>
                     <p class="card-text">$749.00</p>
                     <a href="https://yahairacz.github.io/disfrazaditics/Paginas/Pollo.html" class="btn btn-warning">Ver</a>
