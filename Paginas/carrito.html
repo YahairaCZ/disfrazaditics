@@ -122,7 +122,7 @@
                     <tr>
                         <th>Producto</th>
                         <th>Precio</th>
-                        <th>Eliminar del Carrito</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody id="carritoBody"></tbody>
@@ -153,7 +153,7 @@
                 fila.innerHTML = `
                     <td>${producto.nombre}</td>
                     <td>$${producto.precio.toFixed(2)}</td>
-                    <td><button onclick="eliminarProducto(${index})">Eliminar</button></td>
+                    <td><button onclick="eliminarProducto(${index})">Eliminar</button> <div id="paypal-button-container"></div></td>
                 `;
                 carritoBody.appendChild(fila);
             });
@@ -175,6 +175,32 @@
         }
 
         actualizarCarrito();
+
+        paypal.Buttons({
+                        style:{
+                            color: 'blue',
+                            shape: 'pill', 
+                            label : 'pay'
+                        },
+                        createOrder: function(data, actions){
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: 289
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function(data, actions){
+                            actions.order.capture().then(function(detalles){
+                                console.log(detalles);
+                            });
+                        },
+                        onCancel: function(data){
+                            alert("Pago cancelado");
+                            console.log(data);
+                        }
+                    }).render('#paypal-button-container');
     </script>
 <!--FIn carrito-->
 
